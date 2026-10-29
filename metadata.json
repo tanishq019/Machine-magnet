@@ -1,0 +1,6 @@
+{
+  "name": "Machine Magnets — NIET AI & ML Club",
+  "description": "Official digital platform for Machine Magnets, the premier Artificial Intelligence and Machine Learning club at NIET. Explore projects, events, research, and collaborative engineering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

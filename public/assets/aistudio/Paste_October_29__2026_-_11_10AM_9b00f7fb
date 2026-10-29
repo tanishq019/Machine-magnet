@@ -1,0 +1,888 @@
+# MACHINE MAGNETS — COMPLETE VISUAL REDESIGN & FUNCTIONAL IMPLEMENTATION
+
+## MISSION
+
+Redesign the existing Machine Magnets website into a highly polished, immersive, interactive, and production-quality digital experience for the AI/ML club at NIET.
+
+This is a complete visual and interaction redesign of the existing project.
+
+The current implementation is too generic. It relies on oversized headings, repetitive rectangular sections, alternating red and black backgrounds, plain text layouts, basic member blocks, and a simplistic geometric logo.
+
+Do not merely improve the existing styling. Rethink the visual composition, art direction, typography, motion design, interactions, and page structure.
+
+The website must look intentionally designed by a professional creative development team, not generated from a generic website template.
+
+Build a cohesive brand experience inspired by the visual storytelling, event presentation, and immersive technical identity of https://techkriti.org/, while retaining an original identity for Machine Magnets.
+
+Reference the quality and ambition of the experience, not its exact implementation. Do not copy its branding, assets, or layouts.
+
+**Priority order:**
+1. Exceptional visual design and art direction.
+2. A distinctive opening experience and coordinated animations.
+3. Useful, genuinely functional website features.
+4. Responsive behavior and accessibility.
+5. Performance and maintainability.
+
+All five matter. Do not sacrifice the visual design by concentrating exclusively on implementing sections and buttons.
+
+---
+
+# PART I — VISUAL DESIGN SYSTEM
+
+## 1. TWO THEMES, ONE BRAND
+
+The website must support two complete visual themes: Dark and Light.
+
+The theme toggle must switch the entire design system, including backgrounds, typography, illustrations, borders, shadows, image treatments, controls, modals, menus, and animations.
+
+The two themes must feel intentionally art-directed, not like a basic CSS color inversion.
+
+### DARK THEME — MAGNETIC NIGHT
+
+Core palette:
+
+- Primary background: #080808
+- Secondary background: #111111
+- Elevated surface: #191919
+- Primary accent: #ED2028
+- Accent hover: #FF343C
+- Primary text: #F0ECE8
+- Secondary text: #AAA5A2
+- Borders: rgba(240, 236, 232, 0.14)
+- Subtle red glow: rgba(237, 32, 40, 0.20)
+
+Pure white must NOT be a primary background color in Dark mode.
+
+Use warm off-white for text and restrained neutral highlights. Keep the visual world predominantly black, charcoal, and red.
+
+Design characteristics:
+- Deep, immersive black surfaces.
+- Dramatic red focal points.
+- Restrained red illumination around selected interactive elements.
+- Fine technical grid lines.
+- Animated magnetic-field graphics.
+- Subtle grain or texture only where performance permits.
+- High-contrast typography.
+- Layered images and overlapping compositions.
+- Thin borders and intentional negative space.
+- Selected elements that appear to emerge from darkness.
+
+Red should be visually powerful because it is used selectively. Do not flood every section with red.
+
+### LIGHT THEME — MAGNETIC PAPER
+
+Core palette:
+
+- Primary background: #FFFFFF
+- Secondary background: #FFF5F5
+- Elevated surface: #FFFFFF
+- Soft red surface: #FCE5E5
+- Primary accent: #D71920
+- Accent hover: #B9141B
+- Primary text: #171313
+- Secondary text: #62595A
+- Borders: rgba(80, 20, 20, 0.13)
+- Subtle red shadow: rgba(180, 20, 30, 0.10)
+
+Pure white is allowed in Light mode.
+
+Design characteristics:
+- Clean editorial layouts.
+- White space balanced with soft red surfaces.
+- Deep, readable typography.
+- Red typography accents and graphic lines.
+- Light, precise borders.
+- Subtle paper-like layering where appropriate.
+- Soft shadows rather than dark, heavy shadows.
+- Clear separation between primary content and supporting information.
+
+Light mode must not become a plain white page with red buttons. It should have the same level of depth, visual rhythm, and art direction as Dark mode.
+
+### THEME IMPLEMENTATION
+
+Create centralized theme tokens using the existing project's design system or CSS custom properties.
+
+For example:
+
+--color-background
+--color-surface
+--color-surface-elevated
+--color-text-primary
+--color-text-secondary
+--color-accent
+--color-accent-hover
+--color-border
+--color-shadow
+--color-glow
+
+Do not scatter hardcoded colors throughout individual components.
+
+Use semantic tokens for every major UI element.
+
+Requirements:
+- Add an accessible theme toggle in the main navigation.
+- Provide clear Sun/Moon or equivalent icons.
+- Animate theme changes subtly, without flashing or excessive transitions.
+- Preserve the user's selected theme across visits.
+- On the first visit, use the system preference unless a deliberate brand-default setting is configured.
+- Avoid a flash of the wrong theme during initial rendering.
+- Support keyboard operation and screen readers.
+- Ensure both themes work on every route, modal, dropdown, and responsive layout.
+- Check contrast and readability in both modes.
+- Do not change layout, content, or navigation when switching themes.
+- Provide theme-aware logo and illustration variants where necessary.
+
+---
+
+# PART II — ART DIRECTION
+
+## 2. BUILD A DISTINCTIVE VISUAL IDENTITY
+
+The design should combine:
+
+- Editorial technology magazine.
+- Immersive technical festival.
+- Premium creative studio.
+- Experimental engineering lab.
+- Student project and event platform.
+
+Do not turn the website into a conventional corporate SaaS landing page.
+
+Do not make every section a rounded card.
+
+Do not repeat the same heading-paragraph-card pattern throughout the page.
+
+Do not alternate large solid red and black blocks simply to establish visual variety.
+
+Instead, vary composition, scale, visual density, image placement, typography, motion, and whitespace.
+
+Use:
+- Asymmetric grids.
+- Full-viewport visual sequences.
+- Oversized display typography with carefully controlled line breaks.
+- Image compositions that interact with text.
+- Editorial event posters.
+- Layered project previews.
+- Technical visualizations.
+- Interactive diagrams.
+- Horizontal discovery tracks.
+- Distinctive timeline compositions.
+- Carefully designed detail panels.
+- Large visual transitions between selected sections.
+
+Every section should have its own design rationale.
+
+The entire website must nevertheless feel like one coherent brand.
+
+## 3. TYPOGRAPHY
+
+Establish a complete typographic system.
+
+Use:
+- A bold display typeface for major statements.
+- A highly readable body typeface.
+- Compact uppercase labels for metadata.
+- Monospaced typography for technical annotations where appropriate.
+- Clear differences in weight, scale, line height, and letter spacing.
+
+Use responsive typography with clamp() and sensible maximum widths.
+
+Hero typography may be oversized, but it must be composed around the artwork rather than placed above it without thought.
+
+Avoid:
+- Awkward three-line wrapping.
+- Headings that occupy the entire viewport without adding visual value.
+- Excessive letter spacing.
+- Paragraphs spanning the entire screen width.
+- Repeating the same oversized heading treatment in every section.
+
+Prefer local or efficiently loaded fonts with system fallbacks.
+
+## 4. VISUAL ASSETS
+
+Audit the existing repository for:
+- Club logo and emblem.
+- Event photographs and posters.
+- Member portraits.
+- Project screenshots and demonstrations.
+- Existing illustrations.
+- Institutional or club branding assets.
+
+Reuse genuine assets where suitable.
+
+Create original SVG/CSS artwork for magnetic-field patterns, abstract technical diagrams, progress indicators, and decorative brand graphics where appropriate.
+
+For missing photographs, use appropriately licensed, relevant visual assets or designed placeholders.
+
+Never use broken images, arbitrary stock photography, fabricated project screenshots, or AI-generated portraits presented as actual members.
+
+Use appropriate image dimensions, object positioning, responsive sources, and loading behavior.
+
+Every meaningful image must have suitable alternative text.
+
+---
+
+# PART III — THE OPENING EXPERIENCE
+
+## 5. ORIGINAL MACHINE MAGNETS LOGO
+
+The logo must be more sophisticated than a basic horseshoe icon.
+
+Inspect the original brand assets first. If a genuine logo exists, preserve its identity and improve how it is presented.
+
+If no suitable logo exists, create an original SVG emblem that expresses magnetic attraction, opposing forces, interconnected nodes, or engineered geometry.
+
+The emblem should be recognizable in:
+- Full wordmark.
+- Compact navigation.
+- Favicon.
+- Intro animation.
+- Footer.
+- Light and Dark themes.
+
+Avoid unnecessary 3D rendering.
+
+### FIRST-VISIT REVEAL
+
+Create a brief, premium opening animation:
+
+1. The brand mark emerges from a small number of animated magnetic-field lines or precise geometric strokes.
+2. The strokes converge into the final emblem.
+3. The wordmark resolves.
+4. A restrained red accent illuminates.
+5. The opening transitions into the homepage.
+
+Keep the animation around 1–1.5 seconds, without an artificial waiting period.
+
+Technical requirements:
+- Prefer inline SVG and CSS.
+- Animate opacity, stroke drawing, and transforms.
+- Avoid large video assets and heavy animation dependencies.
+- Do not wait for external fonts or images.
+- Provide a Skip Intro control.
+- Respect reduced-motion settings.
+- Use a static or shortened animation on lower-powered devices.
+- Avoid hydration mismatches if using Next.js.
+- Remember the first-visit state safely and gracefully.
+- Do not replay the full intro on every internal navigation.
+- Provide a replay action in the footer or settings.
+- Never block the initial meaningful content render.
+
+The intro must feel like a deliberate brand reveal, not a loading screen.
+
+---
+
+# PART IV — HERO AND MOTION
+
+## 6. CINEMATIC HERO
+
+Build a visually striking, full-viewport hero.
+
+Suggested copy:
+
+Eyebrow:
+MACHINE MAGNETS / NIET
+
+Primary statement:
+WE DON'T JUST STUDY THE FUTURE.
+
+Secondary statement:
+WE BUILD IT.
+
+Supporting copy:
+Ideas in motion. Intelligence in action. Built together.
+
+Primary CTA:
+Explore the club
+
+Secondary CTA:
+Discover our work
+
+Scroll cue:
+SCROLL TO ENTER
+
+### COMPOSITION
+
+Do not simply stack the headline, paragraph, and buttons above an image.
+
+Compose the typography and visual artwork as one visual system.
+
+Possible art direction:
+- Oversized typography occupying one side.
+- A large magnetic or computational visual occupying the other.
+- Red field lines crossing the composition.
+- Fine technical labels.
+- A subtle animated node system.
+- A foreground graphic that overlaps the background.
+- A restrained pointer-responsive visual effect on supported desktop devices.
+
+The final composition must be balanced, readable, and intentional in both themes.
+
+On mobile, create a deliberate vertical composition. Do not merely shrink the desktop arrangement.
+
+The CTA buttons must navigate to actual sections or valid routes.
+
+## 7. REACT BITS SCROLLEXPAND
+
+Integrate the provided React Bits ScrollExpand component as a major storytelling transition where it complements the hero.
+
+Use the supplied component source as a starting point. Inspect and adapt its behavior rather than blindly pasting it.
+
+The media should expand as the visitor scrolls, transitioning from a framed composition to a larger cinematic visual.
+
+Requirements:
+- Use a meaningful visual related to the club's identity.
+- Match the media and overlay to the selected theme.
+- Use optimized local assets when possible.
+- Preserve natural page scrolling.
+- Keep overlay text readable.
+- Provide image/video fallbacks.
+- Avoid layout shifts.
+- Avoid unnecessary zoom and excessive scrim opacity.
+- Test start, middle, completion, reverse scrolling, resizing, and mobile behavior.
+- Clean up listeners, observers, and animation frames.
+- Respect reduced-motion preferences.
+- Avoid excessive scroll smoothing that makes the interface feel unresponsive.
+
+If the component does not perform well in the existing layout, adapt it or use a simpler equivalent. Visual quality and performance matter more than using a particular library.
+
+## 8. COORDINATED MOTION SYSTEM
+
+Implement a consistent motion language.
+
+Include:
+- SVG logo reveal.
+- ScrollExpand hero.
+- Staggered section entrances.
+- Scroll-linked timeline progress.
+- Animated magnetic-field graphics.
+- Subtle image reveals.
+- Responsive project interactions.
+- Animated active navigation.
+- Theme-transition feedback.
+- Modal and detail-panel transitions.
+- Back-to-top feedback.
+
+Motion must feel designed, not random.
+
+Use transforms and opacity where possible.
+
+Use IntersectionObserver for reveal effects where appropriate.
+
+Do not create dozens of continuously moving elements.
+
+Avoid excessive parallax, giant blur effects, expensive shadows, and animations that repeatedly trigger layout recalculation.
+
+Disable nonessential pointer effects on touch devices.
+
+Respect prefers-reduced-motion across the entire site.
+
+---
+
+# PART V — COMPLETE SITE ARCHITECTURE
+
+## 9. NAVIGATION
+
+Create a polished responsive navigation system.
+
+Include:
+- Club emblem and wordmark.
+- Home.
+- About.
+- Focus areas.
+- Timeline.
+- Projects.
+- Events.
+- Team.
+- Resources.
+- Theme toggle.
+- Join the club CTA.
+
+The navigation may be compact, sticky, or progressively change its appearance as the user scrolls.
+
+Do not make it occupy excessive vertical space.
+
+Implement:
+- Smooth navigation to real sections or routes.
+- Active section indicators.
+- Working mobile menu.
+- Escape-to-close behavior.
+- Keyboard navigation.
+- Focus management.
+- Correct focus states.
+- Theme persistence.
+- Working theme toggle.
+
+All visible links must have real destinations. No placeholder href="#" links.
+
+## 10. CLUB MANIFESTO
+
+Create an editorial section introducing Machine Magnets.
+
+Possible headline:
+"Curiosity is only the beginning."
+
+Use a striking text-and-visual composition.
+
+Explain the actual club's purpose, AI/ML focus, practical learning culture, collaborative projects, and opportunities to experiment.
+
+Include a relevant visual sequence or technical illustration.
+
+Do not invent the club's history, membership numbers, achievements, or institutional claims.
+
+## 11. INTERACTIVE FOCUS AREAS
+
+Build an original interactive exploration of the club's areas of interest.
+
+Possible categories:
+- Artificial intelligence and machine learning.
+- Data and intelligent systems.
+- Generative AI and prompt engineering.
+- Applied engineering and project development.
+- Technical workshops and collaborative learning.
+
+Use an interactive diagram, connected nodes, a magnetic field visualization, or a distinctive editorial arrangement.
+
+When a category is selected, update the displayed content and visual state.
+
+Support:
+- Mouse interaction.
+- Keyboard navigation.
+- Touch interaction.
+- Active-state feedback.
+- Accessible descriptions.
+- Theme-aware styling.
+
+Do not build another repetitive row of identical icon cards.
+
+## 12. INTERACTIVE CLUB TIMELINE
+
+Create a signature horizontal timeline showing verified club milestones, events, projects, achievements, and leadership transitions.
+
+Visual direction:
+- A custom horizontal track.
+- A red progress line.
+- Distinct milestone markers.
+- Large date or year labels.
+- Editorial media.
+- An active milestone with expanded details.
+- A compact progress indicator.
+- Previous and next controls.
+
+### FUNCTIONAL REQUIREMENTS
+
+1. Mouse-wheel movement should advance the timeline horizontally only while the timeline is active and can consume that movement.
+2. Normal vertical page scrolling must resume immediately at both timeline boundaries.
+3. Trackpad input must feel natural.
+4. Touch users must be able to swipe horizontally.
+5. Previous and next buttons must work.
+6. Keyboard arrows must work when the timeline has focus.
+7. Direct milestone selection must work.
+8. The active milestone, progress indicator, and details must remain synchronized.
+9. Support URL hashes or deep links where practical.
+10. Provide a naturally scrollable or static reduced-motion alternative.
+
+Never globally intercept the wheel. Never trap page scrolling.
+
+Use real club data. If the repository lacks verified milestones, clearly identify sample data as development-only and document what needs confirmation.
+
+## 13. PROJECT SHOWCASE
+
+Create a premium engineering portfolio.
+
+The layout must combine:
+- One featured project.
+- Secondary project previews.
+- Relevant visual media.
+- Technology labels.
+- Short descriptions.
+- Project status.
+- Verified contributors where available.
+- GitHub, demo, or documentation links where available.
+
+Avoid a monotonous grid of equally sized cards.
+
+Implement:
+- Search.
+- Domain or technology filters.
+- Status filters where useful.
+- Project detail views or dedicated pages.
+- Working external links.
+- Copy-link functionality.
+- Empty states.
+- Loading and error states when using live data.
+
+Filtering and search must genuinely change the visible results.
+
+Do not invent project repositories or claim a demo is live when it is not.
+
+## 14. EVENTS AND OPPORTUNITIES
+
+Build an event experience that feels like a curated technical festival.
+
+Use:
+- A visually dominant featured event.
+- Event posters and imagery where available.
+- Date and status labels.
+- Editorial event listings.
+- Past-event recaps.
+- Registration actions.
+- Category filters.
+- Event detail pages or panels.
+
+Each event should support relevant fields such as:
+- Title.
+- Description.
+- Date and time.
+- Venue or mode.
+- Event category.
+- Registration deadline.
+- Registration URL.
+- Status.
+- Cover image.
+
+Implement:
+- Filtering by category and status.
+- Event detail navigation.
+- Real registration links or a validated registration flow.
+- Calendar export where appropriate.
+- Expired-event states.
+- Empty states.
+- Proper error feedback.
+
+Never fabricate upcoming events, registration counts, event dates, or success messages.
+
+If no real upcoming events are available, present verified past events and clearly direct users to official announcements.
+
+## 15. TEAM AND LEADERSHIP
+
+Create a distinctive team showcase based on verified existing data.
+
+Use:
+- Featured profiles.
+- Role-based groups.
+- Real portraits when available.
+- Editorial member layouts.
+- Compact profile rows where useful.
+- Accessible expanded profile views.
+
+Interactions may include subtle image transitions, red highlights, directional indicators, and detail panels.
+
+Every profile must work on touch devices and through keyboard navigation.
+
+Preserve actual names and roles from the repository.
+
+Do not invent biographies, photographs, positions, or social handles.
+
+## 16. LEARNING RESOURCE LIBRARY
+
+Build a useful resource discovery experience.
+
+Categories may include:
+- AI/ML.
+- Programming.
+- Data science.
+- Developer tools.
+- Project guides.
+- Workshop materials.
+
+Implement:
+- Search.
+- Category filtering.
+- Resource detail views or genuine direct links.
+- Source attribution.
+- Appropriate difficulty labels.
+- Empty states.
+- Error states.
+
+Use real resources. Do not populate the page with fabricated links.
+
+## 17. ACHIEVEMENTS AND PARTICIPATION PASSPORT
+
+Create a section that showcases verified club achievements, project participation, and contributions.
+
+An optional Digital Passport can display a member's verified participation history and completed activities.
+
+Public achievements must be distinguished from private member records.
+
+Require appropriate authentication and access controls for personal data.
+
+Do not fabricate certificates, achievements, participation records, or member history.
+
+If the existing backend cannot support this feature, implement a clear frontend foundation and document the required backend work rather than pretending the functionality is complete.
+
+## 18. JOIN THE CLUB
+
+Create a strong closing experience with the headline:
+
+"THE NEXT THING WE BUILD COULD START WITH YOU."
+
+Use a carefully composed visual, typography, and red accent treatment.
+
+Provide working actions for:
+- Membership applications.
+- Upcoming opportunities.
+- Official contact or social channels.
+
+Inspect the current project for the genuine joining process before implementing the CTA.
+
+If a registration form is required, validate fields, display loading and error states, and show success only after the operation succeeds.
+
+If there is no backend, connect to a genuine external application destination or clearly identify demo functionality.
+
+## 19. FOOTER
+
+Include:
+- Brand emblem and wordmark.
+- Tagline.
+- Navigation.
+- Verified social links.
+- Available official contact information.
+- Back-to-top action.
+- Replay-intro action.
+- Theme toggle or theme settings.
+- Relevant privacy and accessibility links if implemented.
+
+Do not invent contact details or external URLs.
+
+The footer must have an intentional visual composition in both themes.
+
+---
+
+# PART VI — FUNCTIONALITY CONTRACT
+
+## 20. EVERY CONTROL MUST WORK
+
+Create an interaction inventory covering every visible interactive element.
+
+For each control, verify:
+- Its action.
+- Its destination.
+- Its state changes.
+- Loading behavior.
+- Success feedback.
+- Error feedback.
+- Disabled states where applicable.
+- Keyboard behavior.
+- Mobile behavior.
+
+No dead buttons.
+
+No decorative controls pretending to be functional.
+
+No empty links.
+
+No fake loading states.
+
+No silent form failures.
+
+No fake registration confirmations.
+
+No filters that merely change their visual state.
+
+No timeline arrows that fail to move the timeline.
+
+No theme toggle that changes only the icon.
+
+No mobile menu that opens but cannot close.
+
+No modals that cannot be dismissed or navigated with a keyboard.
+
+Use semantic HTML and appropriate buttons, links, labels, focus management, and ARIA attributes.
+
+Where a feature depends on a backend, API, authentication provider, or external credential, connect it to the actual available infrastructure. If the dependency is missing, provide an honest fallback and document the limitation.
+
+Do not claim an operation succeeded before the service confirms it.
+
+---
+
+# PART VII — PERFORMANCE AND ACCESSIBILITY
+
+## 21. PERFORMANCE
+
+The website must remain responsive on mid-range Android phones, older laptops, integrated graphics, and slow networks.
+
+Implement:
+- Responsive image loading.
+- Appropriate image formats and dimensions.
+- Lazy loading below the fold.
+- Prioritized loading of essential hero media.
+- Efficient component rendering.
+- Minimal critical-path JavaScript.
+- Lightweight CSS/SVG animation.
+- Lazy loading for expensive components.
+- Appropriate event-listener cleanup.
+- Static fallbacks for expensive effects.
+- Local/system font fallbacks.
+- No autoplaying audio.
+- No unnecessary 3D scenes.
+- No huge video used solely for decoration.
+
+Do not load every image or animation dependency immediately.
+
+Preserve a usable page when an asset fails.
+
+Aim for strong Core Web Vitals and Lighthouse performance scores around 90+ where practical, without sacrificing visual quality or accessibility.
+
+## 22. ACCESSIBILITY
+
+Test:
+- Keyboard navigation.
+- Visible focus indicators.
+- Reduced-motion behavior.
+- Semantic heading hierarchy.
+- Image alternative text.
+- Color contrast in both themes.
+- Modal focus management.
+- Escape-to-close behavior.
+- Screen-reader labels.
+- Touch target sizes.
+- Increased browser zoom.
+- Form error announcements.
+- Navigation without a mouse.
+
+Do not rely exclusively on color, hover, or animation to communicate important information.
+
+## 23. RESPONSIVE DESIGN
+
+Test at:
+- 360px.
+- 390px.
+- 768px.
+- 1024px.
+- 1440px.
+- Wider desktop sizes.
+
+Fix:
+- Horizontal overflow.
+- Clipped headings.
+- Broken grid arrangements.
+- Overlapping navigation.
+- Images with poor crop positioning.
+- Excessive vertical gaps.
+- Tiny mobile controls.
+- Timeline scroll problems.
+- Theme-specific layout issues.
+
+Do not treat mobile as a compressed desktop layout. Design it intentionally.
+
+---
+
+# PART VIII — IMPLEMENTATION AND VISUAL QA
+
+## 24. INSPECT THE EXISTING REPOSITORY
+
+Before changing files:
+1. Inspect the framework, package.json, routes, components, styles, assets, and current backend.
+2. Identify the actual source of the generic design.
+3. Locate existing logo, team, project, event, and timeline data.
+4. Check existing animation dependencies and React Bits integrations.
+5. Preserve functioning routes, forms, and integrations.
+6. Identify what is genuinely available and what is missing.
+
+Do not create a separate unrelated application.
+
+## 25. IMPLEMENT IN PHASES
+
+Phase 1: Art direction and design tokens.
+
+Phase 2: Responsive navigation, theme system, and brand identity.
+
+Phase 3: Logo reveal and cinematic hero.
+
+Phase 4: ScrollExpand integration and motion system.
+
+Phase 5: Timeline and interactive focus areas.
+
+Phase 6: Projects, events, team, resources, and participation features.
+
+Phase 7: Functional integration and data validation.
+
+Phase 8: Performance, accessibility, and responsive refinements.
+
+Phase 9: Browser verification and visual polish.
+
+Do not stop after writing a plan. Implement the actual website.
+
+Do not rewrite working components without a reason.
+
+Do not put the entire application into one giant component.
+
+Keep content data separate from presentation where appropriate.
+
+Use the project's existing architecture and deployment target.
+
+## 26. VISUAL ACCEPTANCE TEST
+
+After implementation, launch the website and inspect the actual rendered result.
+
+Take or inspect screenshots in both themes at desktop and mobile sizes.
+
+Evaluate:
+- Is the hero genuinely distinctive?
+- Is the logo professionally designed?
+- Are the two themes visually complete?
+- Is Dark mode genuinely black/red rather than white with dark text?
+- Is Light mode white/soft-red rather than a plain white template?
+- Are backgrounds, shadows, borders, and images adapted correctly?
+- Does each section have a distinct visual composition?
+- Are typography and imagery integrated?
+- Is the timeline visually memorable?
+- Are events presented with editorial hierarchy?
+- Is the project showcase visually compelling?
+- Is the team section properly art-directed?
+- Do animations enhance the experience?
+- Does the page become repetitive halfway through?
+- Does the design work at mobile widths?
+- Are there any broken links or controls?
+- Are there console errors or failed asset requests?
+
+If the site still looks generic, revise the design before declaring it complete.
+
+## 27. FUNCTIONAL ACCEPTANCE TEST
+
+Verify:
+- First-visit intro.
+- Skip intro.
+- Repeat-visit behavior.
+- Theme persistence.
+- Theme switching across all sections and overlays.
+- Responsive navigation.
+- ScrollExpand behavior.
+- Timeline wheel, touch, keyboard, and arrow controls.
+- Project filtering and search.
+- Project details and links.
+- Event filtering and registration behavior.
+- Resource search and navigation.
+- Team profile interactions.
+- Form validation.
+- Error and success states.
+- Footer links.
+- Back-to-top.
+- Replay intro.
+- Reduced-motion mode.
+- Production build.
+- Available automated tests.
+
+Fix issues found during testing. If a test cannot be performed because a service or tool is unavailable, state that clearly.
+
+## 28. FINAL DELIVERABLE
+
+Provide:
+1. Summary of the visual redesign.
+2. Main files and components changed.
+3. Theme system and persistence behavior.
+4. Logo reveal and hero implementation.
+5. Timeline and interaction details.
+6. Features connected to real backend services.
+7. Remaining content or backend dependencies.
+8. Build and test results.
+9. Exact local run commands.
+
+The final website must be a distinctive, polished, responsive, two-theme Machine Magnets experience with original art direction, meaningful motion, and genuinely functional features.
+
+Do not declare completion merely because the page renders.
+
+Inspect the rendered website, improve the visual composition, and verify the functionality before finishing.
+
+BEGIN BY AUDITING THE EXISTING PROJECT, THEN IMPLEMENT THE COMPLETE REDESIGN.
